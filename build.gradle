@@ -1,0 +1,52 @@
+defaultTasks 'class','test','aggregate'
+
+apply plugin: 'java'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+group 'com.leasedigital'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+buildscript {
+    project.ext {
+        serenityVersion = '2.3.12'
+    }
+    repositories
+            {
+                mavenLocal()
+                mavenCentral()
+            }
+    dependencies {
+        classpath('net.serenity-bdd:serenity-gradle-plugin:' + serenityVersion)
+    }
+}
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+ext {
+    serenityCoreVersion = '2.4.24'
+    serenityCucumberVersion = '2.4.24'
+    junitVersion = '4.13.1'
+    assertJVersion = '3.8.0'
+    restAssureVersion = '4.2.0'
+}
+dependencies {
+    compile "net.serenity-bdd:serenity-core:${serenityCoreVersion}"
+    compile "net.serenity-bdd:serenity-cucumber6:${serenityCucumberVersion}"
+    compile "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}"
+    compile "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}"
+    compile "net.serenity-bdd:serenity-ensure:${serenityCoreVersion}"
+    compile "junit:junit:${junitVersion}"
+    compile "org.assertj:assertj-core:${assertJVersion}"
+    compile "io.rest-assured:rest-assured:${restAssureVersion}"
+
+}
+
+test{
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
+}
+gradle.startParameter.continueOnFailure= true
+test.finalizedBy(aggregate)
+

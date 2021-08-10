@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="6" name="Aviation API checks positive scenario" skipped="0" tests="10" time="60.22" timestamp="2021-08-08 01:29:15"><testcase name="Tracking and retrieving real time flight status"><failure message="1 expectation failed.&#10;JSON path data.arrivaltimezone doesn't match.&#10;Expected: a collection containing &quot;Asia/Shanghai&quot;&#10;  Actual: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]&#10;" type="java.lang.AssertionError">1 expectation failed.
+JSON path data.arrivaltimezone doesn't match.
+Expected: a collection containing "Asia/Shanghai"
+  Actual: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+</failure><system-err>1 expectation failed.
+JSON path data.arrivaltimezone doesn't match.
+Expected: a collection containing "Asia/Shanghai"
+  Actual: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+
+io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:261)
+io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:108)
+io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:244)
+io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
+groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)
+io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:298)
+io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
+com.aviation.apiautomation.helpers.response.DataHelper.handleOtherArrivalDepartureResponse(DataHelper.java:139)
+com.aviation.apiautomation.helpers.response.DataHelper.containsValue(DataHelper.java:50)
+com.aviation.apiautomation.stepdefinitions.RealTimeFlightSteps.iFindRealTimeFlightDetails(RealTimeFlightSteps.java:31)
+✽.i find real time flight "Departure" details of "timezone" with "Asia/Shanghai"(file:///Users/kavyaps/Intellij%20Projects/LeaseDigitalAPIAutomation/src/test/resources/features/RealTimeFlights.feature:11)
+</system-err></testcase></testsuite>

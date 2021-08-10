@@ -1,0 +1,50 @@
+Table of contents
+
+CONTENTS OF THIS FILE
+---------------------
+
+ * Introduction
+ * Recommended modules
+ * Configuration
+ * Installation
+
+Introduction
+Initial project structure of Aviation endpoint
+Refer https://aviationstack.com/documentation
+
+INTRODUCTION
+------------
+
+Initial project commit for Aviation API. Serenity framework used along with Rest Assured
+Endpoint considered:
+- Real-Time Flights
+- Historical Flight
+ * For a full description of the module, visit the project page:
+   https://aviationstack.com/documentation
+
+RECOMMENDED MODULES
+-------------------
+gradle project to be created
+
+CONFIGURATION
+-------------
+Make sure the dependencies in POM file are not altered. Below are the compatible version that works currently
+
+net.serenity-bdd:serenity-core: 2.4.24
+net.serenity-bdd:serenity-cucumber6: 2.4.24
+net.serenity-bdd:serenity-screenplay: 2.4.24
+net.serenity-bdd:serenity-screenplay-webdriver: 2.4.24
+net.serenity-bdd:serenity-ensure: 2.4.24
+junit:junit: 4.13.1
+org.assertj:assertj-core: 3.8.0
+io.rest-assured:rest-assured: 4.2.0
+
+INSTALLATION
+------------
+- Import the gradle project,
+- Update config_path with path to Conf.properties file
+- Update com.aviationapi.key in Config.properties
+- Run below command to generate HTML report. Report will be generated in target>site>serenity>
+   ./gradlew test aggregate --stacktrace
+Build success in Terminal to be received
+To check the scenarios covered so far refer "Aviation.feature" file
